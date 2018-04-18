@@ -21,7 +21,7 @@ namespace Universe
                 universeField[i] = new UniverseCell[width];
                 for (int i2 = 0; i2 < width; i2++)
                 {
-                    universeField[i][i2] =new UniverseCell();
+                    universeField[i][i2] = new UniverseCell();
                 }
             }
         }

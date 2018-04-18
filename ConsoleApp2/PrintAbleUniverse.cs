@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Universe
 {
-    class PrintAbleUniverse : UniverseField
+    class PrintAbleUniverse : UniverseWithCursor
     {
         public PrintAbleUniverse(int width, int height) : base(width, height)
         {
@@ -33,11 +33,25 @@ namespace Universe
                         {
                             if (universeField[i][i2].IsActive)
                             {
-                                Console.Write("0");
+                                if (CursorCordX == i2 && CursorCordY == i)
+                                {
+                                    Console.Write("0");
+                                }
+                                else
+                                {
+                                    Console.Write("O");
+                                }
                             }
                             else
                             {
-                                Console.Write(" ");
+                                if (CursorCordX == i2 && CursorCordY == i)
+                                {
+                                    Console.Write("X");
+                                }
+                                else
+                                {
+                                    Console.Write(" ");
+                                }
                             }
                         }
                     }

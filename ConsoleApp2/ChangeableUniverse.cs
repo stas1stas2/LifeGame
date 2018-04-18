@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Universe
 {
-    internal class ChangeableUniverse : PrintAbleUniverse
+    internal class ChangeableUniverse : UniverseField
     {
         public ChangeableUniverse(int width, int height) : base(width, height)
         {
