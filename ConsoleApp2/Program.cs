@@ -1,12 +1,14 @@
 ﻿using System;
 
-namespace ConsoleApp2
+namespace LifeGame
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Universe.ChangeableUniverse a = new Universe.ChangeableUniverse(10, 10);
+            a.ChangeCell(0,9);
+            a.PrintField();
         }
     }
 }
