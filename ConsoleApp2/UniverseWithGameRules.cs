@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Universe
+﻿namespace Universe
 {
     class UniverseWithGameRules : UniverseField
     {
         private bool isFieldWereChanged = true;
         private UniverseCell[][] newField;
+        private FieldMemento states;
 
         public UniverseWithGameRules(int width, int height) : base(width, height)
         {
@@ -38,79 +35,104 @@ namespace Universe
             }
         }
 
-        public void ChangeUniverseField()
+        public bool ChangeUniverseField()
         {
-            if (!isFieldWereChanged)
+            if (isFieldWereChanged)
             {
-                return;
+                isFieldWereChanged = false;
+                for (int i  = 0; i < Heigth; i++)
+                {
+                    for (int i2 = 0; i2 < Width; i2++)
+                    {
+                        int countOfNeighbors = GetCountOfNeighbors(i, i2);
+                        if (universeField[i][i2].IsActive && (countOfNeighbors < 2 || countOfNeighbors > 3))
+                        {
+                            newField[i][i2].IsActive = false;
+                            isFieldWereChanged = true;
+                        }
+                        else if (!universeField[i][i2].IsActive && (countOfNeighbors >= 2 && countOfNeighbors <= 3))
+                        {
+                            newField[i][i2].IsActive = true;
+                            isFieldWereChanged = true;
+                        }
+                    }
+                }
+
+                states.AddState(GetFieldClone());
+                UniverseCell[][] arrayForSwap = universeField;
+                universeField = newField;
+                newField = arrayForSwap;
+                ClearField();
+
+                if (!isFieldWereChanged)
+                {
+                    for (int i = states.CountOfItems-1; i > 0; i++)
+                    {
+                       
+                    }
+                }
             }
-            
-            isFieldWereChanged = false;
+            return isFieldWereChanged;
         }
 
-        private int GetCountOfNeighbors()
+        private int GetCountOfNeighbors(int Ycord, int Xcord)
         {
             int countOfneighbors = 0;
-            for (int i = 0; i < Heigth; i++)
+
+            if (Ycord > 0)
             {
-                for (int i2 = 0; i2 < Width; i2++)
+                if (universeField[Ycord - 1][Xcord].IsActive)
                 {
-                    if (i > 0)
+                    countOfneighbors++;
+                }
+                if (Xcord > 0)
+                {
+                    if (universeField[Ycord - 1][Xcord - 1].IsActive)
                     {
-                        if (universeField[i-1][i2].IsActive)
-                        {
-                            countOfneighbors++;
-                        }
-                        if (i2 > 0)
-                        {
-                            if (universeField[i - 1][i2 - 1].IsActive)
-                            {
-                                countOfneighbors++;
-                            }
-                        }
-                        if (i2+1 < Width)
-                        {
-                            if (universeField[i - 1][i2 + 1].IsActive)
-                            {
-                                countOfneighbors++;
-                            }
-                        } 
+                        countOfneighbors++;
                     }
-                    if (i+1 < Heigth)
+                }
+                if (Xcord + 1 < Width)
+                {
+                    if (universeField[Ycord - 1][Xcord + 1].IsActive)
                     {
-                        if (universeField[i + 1][i2].IsActive)
-                        {
-                            countOfneighbors++;
-                        }
-                        if (i2 > 0)
-                        {
-                            if (universeField[i + 1][i2 - 1].IsActive)
-                            {
-                                countOfneighbors++;
-                            }
-                        }
-                        if (i2 + 1 < Width)
-                        {
-                            if (universeField[i + 1][i2 + 1].IsActive)
-                            {
-                                countOfneighbors++;
-                            }
-                        }
+                        countOfneighbors++;
                     }
-                    if (i2 > 0)
+                }
+            }
+            if (Ycord + 1 < Heigth)
+            {
+                if (universeField[Ycord + 1][Xcord].IsActive)
+                {
+                    countOfneighbors++;
+                }
+                if (Xcord > 0)
+                {
+                    if (universeField[Ycord + 1][Xcord - 1].IsActive)
                     {
-                        if (universeField[i][i2 - 1].IsActive)
-                        {
-                            countOfneighbors++;
-                        }
+                        countOfneighbors++;
                     }
-                    if (i2 + 1 < Width)
+                }
+                if (Xcord + 1 < Width)
+                {
+                    if (universeField[Ycord + 1][Xcord + 1].IsActive)
                     {
-                        if (universeField[i][i2 + 1].IsActive)
-                        {
-                            countOfneighbors++;
-                        }
+                        countOfneighbors++;
                     }
+                }
+            }
+            if (Xcord > 0)
+            {
+                if (universeField[Ycord][Xcord - 1].IsActive)
+                {
+                    countOfneighbors++;
+                }
+            }
+            if (Xcord + 1 < Width)
+            {
+                if (universeField[Ycord][Xcord + 1].IsActive)
+                {
+                   countOfneighbors++;
                 }
             }
             return countOfneighbors;
