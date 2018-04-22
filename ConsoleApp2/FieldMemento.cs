@@ -30,12 +30,15 @@ namespace Universe
 
         public UniverseCell[][] this[int index]
         {
-            get {
+            get
+            {
                 if (index < countOfItems)
                 {
                     return states[index];
                 }
                 return null;
+
+            }
         }
     }
 }

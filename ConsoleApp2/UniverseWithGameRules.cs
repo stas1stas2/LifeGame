@@ -1,20 +1,20 @@
 ﻿namespace Universe
 {
-    class UniverseWithGameRules : UniverseField
+    class UniverseWithGameRules : PrintAbleUniverse
     {
         private bool isFieldWereChanged = true;
         private UniverseCell[][] newField;
-        private FieldMemento states;
+        private FieldMemento states = new FieldMemento();
 
         public UniverseWithGameRules(int width, int height) : base(width, height)
         {
-            universeField = new UniverseCell[height][];
+            newField = new UniverseCell[height][];
             for (int i = 0; i < height; i++)
             {
-                universeField[i] = new UniverseCell[width];
+                newField[i] = new UniverseCell[width];
                 for (int i2 = 0; i2 < width; i2++)
                 {
-                    universeField[i][i2] = new UniverseCell();
+                    newField[i][i2] = new UniverseCell();
                 }
             }
         }
@@ -40,20 +40,26 @@
             if (isFieldWereChanged)
             {
                 isFieldWereChanged = false;
-                for (int i  = 0; i < Heigth; i++)
+                for (int i = 0; i < Heigth; i++)
                 {
                     for (int i2 = 0; i2 < Width; i2++)
                     {
                         int countOfNeighbors = GetCountOfNeighbors(i, i2);
-                        if (universeField[i][i2].IsActive && (countOfNeighbors < 2 || countOfNeighbors > 3))
+                        if (countOfNeighbors < 2 || countOfNeighbors > 3)
                         {
                             newField[i][i2].IsActive = false;
-                            isFieldWereChanged = true;
+                            if (universeField[i][i2].IsActive)
+                            {
+                                isFieldWereChanged = true;
+                            }
                         }
-                        else if (!universeField[i][i2].IsActive && (countOfNeighbors >= 2 && countOfNeighbors <= 3))
+                        else if (countOfNeighbors == 3 || (countOfNeighbors == 2 && universeField[i][i2].IsActive))
                         {
                             newField[i][i2].IsActive = true;
-                            isFieldWereChanged = true;
+                            if (!universeField[i][i2].IsActive)
+                            {
+                                isFieldWereChanged = true;
+                            }
                         }
                     }
                 }
@@ -64,17 +70,18 @@
                 newField = arrayForSwap;
                 ClearField();
 
-                if (!isFieldWereChanged)
+                for (int i = states.CountOfItems - 1; i >= 0; i--)
                 {
-                    for (int i = states.CountOfItems-1; i > 0; i++)
+                    if (IsFieldEqual(states[i]))
                     {
-                       
+                        isFieldWereChanged = false;
+                        break;
                     }
                 }
             }
             return isFieldWereChanged;
         }
-
+    
         private int GetCountOfNeighbors(int Ycord, int Xcord)
         {
             int countOfneighbors = 0;

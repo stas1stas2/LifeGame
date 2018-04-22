@@ -42,10 +42,42 @@ namespace Universe
             return returnValue;
         }
 
+        public bool IsFieldEqual(UniverseCell[][] fieldForCompare)
+        {
+            bool isEuqal = true;
+            if (fieldForCompare.Length != height)
+            {
+                isEuqal = false;
+            }
+            else
+            {
+                for (int i = 0; i < height && isEuqal; i++)
+                { 
+                    if (fieldForCompare[i].Length != universeField[i].Length)
+                    {
+                        isEuqal = false;
+                    }
+                    else
+                    {
+                        for (int j = 0; j < width; j++)
+                        {
+                            if (universeField[i][j].IsActive != fieldForCompare[i][j].IsActive)
+                            {
+                                isEuqal = false;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return isEuqal;
+        }
+
         public int Width
         {
             get { return width; }
         }
+
         public int Heigth
         {
             get { return height; }

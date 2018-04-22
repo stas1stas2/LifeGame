@@ -6,11 +6,8 @@ namespace LifeGame
     {
         static void Main(string[] args)
         {
-            Universe.PrintAbleUniverse a = new Universe.PrintAbleUniverse(10, 10);
-            a.ChangeCell(0,2);
-            a.MoveCursorLeft();
-            a.MoveCursorRight();
-            a.PrintField();
+            Universe.LifeGameInterface a = new Universe.LifeGameInterface(40, 10);
+            a.StartGame();
         }
     }
 }
