@@ -4,6 +4,11 @@ namespace LifeGame
 {
     internal class PrintAbleUniverse : UniverseWithCursor
     {
+        char symbolOfBounds = '+';
+        char symbolOfCellWithLife = 'O';
+        char symbolOfCursor = 'X';
+        char symbolOfCellWithoutLife = ' ';
+
         public PrintAbleUniverse(int width, int height) : base(width, height)
         {
         }
@@ -17,7 +22,7 @@ namespace LifeGame
                 {
                     for (int i3 = 0; i3 <= Width + 1; i3++)
                     {
-                        Console.Write("+");
+                        Console.Write(symbolOfBounds);
                     }
                 }
                 else
@@ -27,14 +32,14 @@ namespace LifeGame
                         Console.ForegroundColor = ConsoleColor.Gray;
                         if (i2 == -1 || i2 == Width)
                         {
-                            Console.Write("+");
+                            Console.Write(symbolOfBounds);
                         }
                         else
                         {
                             if (CursorCordX == i2 && CursorCordY == i)
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
-                                Console.Write("X");
+                                Console.Write(symbolOfCursor);
                             }
                             else
                             {
@@ -42,18 +47,18 @@ namespace LifeGame
                                 {
                                     {
                                         Console.ForegroundColor = ConsoleColor.Green;
-                                        Console.Write("O");
+                                        Console.Write(symbolOfCellWithLife);
                                     }
                                 }
                                 else
                                 {
-                                    Console.Write(" ");
+                                    Console.Write(symbolOfCellWithoutLife);
                                 }
                             }
                         }
                     }
                 }
-                Console.Write("\n");
+                Console.WriteLine();
             }
         }
 
@@ -66,7 +71,7 @@ namespace LifeGame
                 {
                     for (int i3 = 0; i3 <= Width + 1; i3++)
                     {
-                        Console.Write("+");
+                        Console.Write(symbolOfBounds);
                     }
                 }
                 else
@@ -76,24 +81,24 @@ namespace LifeGame
                         Console.ForegroundColor = ConsoleColor.Gray;
                         if (i2 == -1 || i2 == Width)
                         {
-                            Console.Write("+");
+                            Console.Write(symbolOfBounds);
                         }
                         else
                         {
                             if (FieldOfUniverse[i][i2].IsActive)
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                Console.Write("O");
+                                Console.Write(symbolOfCellWithLife);
                             }
                             else
                             {
                                 Console.ForegroundColor = ConsoleColor.Gray;
-                                Console.Write(" ");
+                                Console.Write(symbolOfCellWithoutLife);
                             }
                         }
                     }
                 }
-                Console.Write("\n");
+                Console.WriteLine();
             }
         }
     }

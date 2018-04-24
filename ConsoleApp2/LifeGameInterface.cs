@@ -6,6 +6,8 @@ namespace LifeGame
     internal class LifeGameInterface : UniverseWithGameRules
     {
         private int generations = 0;
+        private int pauseTime = 300;
+
         public LifeGameInterface(int width, int height) : base(width, height)
         {
         }
@@ -62,7 +64,7 @@ namespace LifeGame
                 Console.Clear();
                 PrintGeneration();
                 PrintFieldWithoutCursor();
-                Thread.Sleep(300);
+                Thread.Sleep(pauseTime);
                 generations++;
             }
         }
