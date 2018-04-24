@@ -11,14 +11,7 @@
 
         public void ChangeValue ()
         {
-            if (isActive)
-            {
-                isActive = false;
-            }
-            else
-            {
-                isActive = true;
-            }
+            isActive = !isActive;
         }
 
         public bool IsActive
