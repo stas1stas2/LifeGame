@@ -37,7 +37,6 @@ namespace LifeGame
                     return states[index];
                 }
                 return null;
-
             }
         }
     }
