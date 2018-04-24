@@ -1,6 +1,6 @@
 ﻿namespace Universe
 {
-    class UniverseCell
+    internal class UniverseCell
     {
         private bool isActive;
 

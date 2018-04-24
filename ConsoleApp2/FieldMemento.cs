@@ -2,7 +2,7 @@
 
 namespace Universe
 {
-    class FieldMemento
+    internal class FieldMemento
     {
         private UniverseCell[][][] states;
         int countOfItems;

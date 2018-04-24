@@ -1,6 +1,6 @@
 ﻿namespace Universe
 {
-    class UniverseWithCursor : ChangeableUniverse
+    internal class UniverseWithCursor : ChangeableUniverse
     {
         private int cursorCordX;
         private int cursorCordY;

@@ -1,6 +1,6 @@
 ﻿namespace Universe
 {
-    class UniverseWithGameRules : PrintAbleUniverse
+    internal class UniverseWithGameRules : PrintAbleUniverse
     {
         private bool isFieldWereChanged = true;
         private UniverseCell[][] newField;

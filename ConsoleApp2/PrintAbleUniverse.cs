@@ -2,7 +2,7 @@
 
 namespace Universe
 {
-    class PrintAbleUniverse : UniverseWithCursor
+    internal class PrintAbleUniverse : UniverseWithCursor
     {
         public PrintAbleUniverse(int width, int height) : base(width, height)
         {
