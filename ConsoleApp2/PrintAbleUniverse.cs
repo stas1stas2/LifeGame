@@ -31,25 +31,19 @@ namespace LifeGame
                         }
                         else
                         {
-                            if (universeField[i][i2].IsActive)
+                            if (CursorCordX == i2 && CursorCordY == i)
                             {
-                                if (CursorCordX == i2 && CursorCordY == i)
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.Write("0");
-                                }
-                                else
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Green;
-                                    Console.Write("O");
-                                }
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write("X");
                             }
                             else
                             {
-                                if (CursorCordX == i2 && CursorCordY == i)
+                                if (universeField[i][i2].IsActive)
                                 {
-                                    Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.Write("X");
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write("O");
+                                    }
                                 }
                                 else
                                 {
