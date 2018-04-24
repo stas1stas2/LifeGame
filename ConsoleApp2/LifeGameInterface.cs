@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Universe
+namespace LifeGame
 {
     internal class LifeGameInterface : UniverseWithGameRules
     {

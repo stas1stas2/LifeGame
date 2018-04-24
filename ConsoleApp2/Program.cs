@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Universe.LifeGameInterface a = new Universe.LifeGameInterface(40, 10);
+           LifeGameInterface a = new LifeGameInterface(40, 10);
             a.StartGame();
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace Universe
+﻿namespace LifeGame
 {
     internal class UniverseField
     {

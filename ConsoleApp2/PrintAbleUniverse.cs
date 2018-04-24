@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Universe
+namespace LifeGame
 {
     internal class PrintAbleUniverse : UniverseWithCursor
     {
