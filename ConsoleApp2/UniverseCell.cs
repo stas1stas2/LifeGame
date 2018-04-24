@@ -9,7 +9,7 @@
             isActive = false;
         }
 
-        public void ChangeValue ()
+        public void ChangeValue()
         {
             isActive = !isActive;
         }
