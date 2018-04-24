@@ -5,7 +5,7 @@ namespace LifeGame
     internal class FieldMemento
     {
         private UniverseCell[][][] states;
-        int countOfItems;
+        private int countOfItems;
 
         public FieldMemento()
         {
