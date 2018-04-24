@@ -22,10 +22,10 @@ namespace LifeGame
                 }
                 else
                 {
-                    for (int i2 = -1; i2 <= this.Width; i2++)
+                    for (int i2 = -1; i2 <= Width; i2++)
                     {
                         Console.ForegroundColor = ConsoleColor.Gray;
-                        if (i2 == -1 || i2 == this.Width)
+                        if (i2 == -1 || i2 == Width)
                         {
                             Console.Write("+");
                         }
@@ -65,22 +65,22 @@ namespace LifeGame
 
         public void PrintFieldWithoutCursor()
         {
-            for (int i = -1; i <= this.Heigth; i++)
+            for (int i = -1; i <= Heigth; i++)
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
-                if (i == -1 || i == this.Heigth)
+                if (i == -1 || i == Heigth)
                 {
-                    for (int i3 = 0; i3 <= this.Width + 1; i3++)
+                    for (int i3 = 0; i3 <= Width + 1; i3++)
                     {
                         Console.Write("+");
                     }
                 }
                 else
                 {
-                    for (int i2 = -1; i2 <= this.Width; i2++)
+                    for (int i2 = -1; i2 <= Width; i2++)
                     {
                         Console.ForegroundColor = ConsoleColor.Gray;
-                        if (i2 == -1 || i2 == this.Width)
+                        if (i2 == -1 || i2 == Width)
                         {
                             Console.Write("+");
                         }
