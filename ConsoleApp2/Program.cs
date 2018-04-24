@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LifeGame
+﻿namespace LifeGame
 {
     class Program
     {
