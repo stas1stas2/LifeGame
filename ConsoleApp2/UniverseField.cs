@@ -4,7 +4,7 @@
     {
         private readonly int width;
         private readonly int height;
-        protected UniverseCell[][] universeField;
+        private UniverseCell[][] universeField;
 
         public UniverseField(int width, int height)
         {
@@ -67,6 +67,12 @@
                 }
             }
             return isEuqal;
+        }
+
+        protected UniverseCell[][] FieldOfUniverse
+        {
+            get { return universeField; }
+            set { universeField = value; }
         }
 
         public int Width

@@ -18,7 +18,7 @@ namespace LifeGame
             {
                 throw new ArgumentOutOfRangeException();
             }
-            universeField[yCoord][xCoord].ChangeValue();
+            FieldOfUniverse[yCoord][xCoord].ChangeValue();
         }
     }
 }

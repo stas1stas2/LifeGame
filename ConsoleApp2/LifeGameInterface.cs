@@ -49,7 +49,7 @@ namespace LifeGame
                 }
                 else if (pressedKey.Key == ConsoleKey.Enter)
                 {
-                    universeField[CursorCordY][CursorCordX].ChangeValue();
+                    FieldOfUniverse[CursorCordY][CursorCordX].ChangeValue();
                 }
                 Console.Clear();
                 PrintGeneration();

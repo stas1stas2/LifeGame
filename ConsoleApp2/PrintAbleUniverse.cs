@@ -38,7 +38,7 @@ namespace LifeGame
                             }
                             else
                             {
-                                if (universeField[i][i2].IsActive)
+                                if (FieldOfUniverse[i][i2].IsActive)
                                 {
                                     {
                                         Console.ForegroundColor = ConsoleColor.Green;
@@ -80,7 +80,7 @@ namespace LifeGame
                         }
                         else
                         {
-                            if (universeField[i][i2].IsActive)
+                            if (FieldOfUniverse[i][i2].IsActive)
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.Write("O");
