@@ -4,8 +4,8 @@
     {
         static internal void Main()
         {
-            LifeGameInterface GameObject = new LifeGameInterface(40, 10);
-            GameObject.StartGame();
+            LifeGameInterface gameObject = new LifeGameInterface(40, 10);
+            gameObject.StartGame();
         }
     }
 }
