@@ -59,7 +59,6 @@ namespace LifeGame
             }
             while (IsGameContinue)
             {
-                
                 IsGameContinue = ChangeUniverseField();
                 Console.Clear();
                 PrintGeneration();
