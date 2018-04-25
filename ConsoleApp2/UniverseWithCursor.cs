@@ -9,7 +9,7 @@
         {
             cursorCordX = 0;
             cursorCordY = 0;
-    }
+        }
 
         public int CursorCordX
         {
@@ -29,6 +29,13 @@
             }
         }
 
+        public void MoveCursorLower()
+        {
+            if (cursorCordY + 1 < Heigth)
+            {
+                cursorCordY++;
+            }
+        }
         public void MoveCursorRight()
         {
             if (cursorCordX + 1 < Width)
@@ -42,14 +49,6 @@
             if (cursorCordY - 1 >= 0)
             {
                 cursorCordY--;
-            }
-        }
-
-        public void MoveCursorLower()
-        {
-            if (cursorCordY + 1 < Heigth)
-            {
-                cursorCordY++;
             }
         }
     }

@@ -4,30 +4,14 @@ namespace LifeGame
 {
     internal class FieldMemento
     {
-        private UniverseCell[][][] states;
         private int countOfItems;
+        private UniverseCell[][][] states;
 
         public FieldMemento()
         {
             states = new UniverseCell[10][][];
             countOfItems = 0;
         }
-
-        public void AddState(UniverseCell[][] newState)
-        {
-            if (countOfItems + 1 >= states.Length)
-            {
-                Array.Resize(ref states, states.Length * 2);
-            }
-            states[countOfItems] = newState;
-            countOfItems++;
-        }
-
-        public int CountOfItems
-        {
-            get { return countOfItems; }
-        }
-
         public UniverseCell[][] this[int index]
         {
             get
@@ -38,6 +22,21 @@ namespace LifeGame
                 }
                 return null;
             }
+        }
+
+        public int CountOfItems
+        {
+            get { return countOfItems; }
+        }
+
+        public void AddState(UniverseCell[][] newState)
+        {
+            if (countOfItems + 1 >= states.Length)
+            {
+                Array.Resize(ref states, states.Length * 2);
+            }
+            states[countOfItems] = newState;
+            countOfItems++;
         }
     }
 }

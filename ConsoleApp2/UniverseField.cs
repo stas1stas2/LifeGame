@@ -22,6 +22,22 @@
             }
         }
 
+        protected UniverseCell[][] FieldOfUniverse
+        {
+            get { return universeField; }
+            set { universeField = value; }
+        }
+
+        public int Width
+        {
+            get { return width; }
+        }
+
+        public int Heigth
+        {
+            get { return height; }
+        }
+
         public UniverseCell[][] GetFieldClone()
         {
             UniverseCell[][] returnValue;
@@ -67,22 +83,6 @@
                 }
             }
             return isEuqal;
-        }
-
-        protected UniverseCell[][] FieldOfUniverse
-        {
-            get { return universeField; }
-            set { universeField = value; }
-        }
-
-        public int Width
-        {
-            get { return width; }
-        }
-
-        public int Heigth
-        {
-            get { return height; }
         }
     }
 }
