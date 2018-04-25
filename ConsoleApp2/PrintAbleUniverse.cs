@@ -4,10 +4,10 @@ namespace LifeGame
 {
     internal class PrintAbleUniverse : UniverseWithCursor
     {
-        char symbolOfBounds = '+';
-        char symbolOfCellWithLife = 'O';
-        char symbolOfCursor = 'X';
-        char symbolOfCellWithoutLife = ' ';
+        private char symbolOfBounds = '+';
+        private char symbolOfCellWithLife = 'O';
+        private char symbolOfCursor = 'X';
+        private char symbolOfCellWithoutLife = ' ';
 
         public PrintAbleUniverse(int width, int height) : base(width, height)
         {
