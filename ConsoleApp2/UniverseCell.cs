@@ -9,15 +9,15 @@
             isActive = false;
         }
 
+        public void ChangeValue()
+        {
+            isActive = !isActive;
+        }
+
         public bool IsActive
         {
             get { return isActive; }
             set { isActive = value; }
-        }
-
-        public void ChangeValue()
-        {
-            isActive = !isActive;
         }
     }
 }

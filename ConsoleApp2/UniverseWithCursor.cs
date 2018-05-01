@@ -36,6 +36,7 @@
                 cursorCordY++;
             }
         }
+
         public void MoveCursorRight()
         {
             if (cursorCordX + 1 < Width)

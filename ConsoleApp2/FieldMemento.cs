@@ -12,6 +12,7 @@ namespace LifeGame
             states = new UniverseCell[10][][];
             countOfItems = 0;
         }
+
         public UniverseCell[][] this[int index]
         {
             get

@@ -2,8 +2,8 @@
 {
     internal class UniverseField
     {
-        private readonly int width;
         private readonly int height;
+        private readonly int width;
         private UniverseCell[][] universeField;
 
         public UniverseField(int width, int height)
@@ -27,31 +27,15 @@
             get { return universeField; }
             set { universeField = value; }
         }
-
-        public int Width
-        {
-            get { return width; }
-        }
-
+        
         public int Heigth
         {
             get { return height; }
         }
 
-        public UniverseCell[][] GetFieldClone()
+        public int Width
         {
-            UniverseCell[][] returnValue;
-            returnValue = new UniverseCell[height][];
-            for (int i = 0; i < height; i++)
-            {
-                returnValue[i] = new UniverseCell[width];
-                for (int i2 = 0; i2 < width; i2++)
-                {
-                    returnValue[i][i2] = new UniverseCell();
-                    returnValue[i][i2].IsActive = universeField[i][i2].IsActive;
-                }
-            }
-            return returnValue;
+            get { return width; }
         }
 
         public bool IsFieldEqual(UniverseCell[][] fieldForCompare)
@@ -83,6 +67,22 @@
                 }
             }
             return isEuqal;
+        }
+
+        public UniverseCell[][] GetFieldClone()
+        {
+            UniverseCell[][] returnValue;
+            returnValue = new UniverseCell[height][];
+            for (int i = 0; i < height; i++)
+            {
+                returnValue[i] = new UniverseCell[width];
+                for (int i2 = 0; i2 < width; i2++)
+                {
+                    returnValue[i][i2] = new UniverseCell();
+                    returnValue[i][i2].IsActive = universeField[i][i2].IsActive;
+                }
+            }
+            return returnValue;
         }
     }
 }
