@@ -18,6 +18,7 @@ namespace LifeGame
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine($"{generations}");
         }
+
         public void StartGame()
         {
             bool IsGameContinue = true;
