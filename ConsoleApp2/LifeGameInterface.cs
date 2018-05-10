@@ -29,43 +29,21 @@ namespace LifeGame
             
             while (!spaceWereTaped)
             {
-                ConsoleKeyInfo pressedKey = Console.ReadKey();
-                if (pressedKey.Key == ConsoleKey.DownArrow)
-                {
-                    MoveCursorLower();
-                }
-                else if (pressedKey.Key == ConsoleKey.UpArrow)
-                {
-                    MoveCursorUpper();
-                }
-                else if (pressedKey.Key == ConsoleKey.LeftArrow)
-                {
-                    MoveCursorLeft();
-                }
-                else if (pressedKey.Key == ConsoleKey.RightArrow)
-                {
-                    MoveCursorRight();
-                }
-                else if (pressedKey.Key == ConsoleKey.Spacebar)
-                {
-                    spaceWereTaped = true;
-                }
-                else if (pressedKey.Key == ConsoleKey.Enter)
-                {
-                    FieldOfUniverse[CursorCordY][CursorCordX].ChangeValue();
-                }
+                ConsoleKey pressedKey = Console.ReadKey().Key;
+                MoveCursor(pressedKey);
                 Console.Clear();
+                spaceWereTaped = LifeOfUniverse.boolean;
                 PrintGeneration();
                 PrintFieldWithCursor();
             }
             while (IsGameContinue)
             {
+                generations++;
                 IsGameContinue = ChangeUniverseField();
                 Console.Clear();
                 PrintGeneration();
                 PrintFieldWithoutCursor();
                 Thread.Sleep(pauseTime);
-                generations++;
             }
         }
     }

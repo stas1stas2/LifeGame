@@ -1,55 +1,39 @@
-﻿namespace LifeGame
+﻿using System;
+namespace LifeGame
 {
     internal class UniverseWithCursor : ChangeableUniverse
     {
-        private int cursorCordX;
-        private int cursorCordY;
+        private const int countOfCommands = 6;
+        private Cursor cursorForField;
+        private ICursorCommand[] commandForCursorsMove;
+        protected IsUniverseHaveToLive LifeOfUniverse = new IsUniverseHaveToLive();
 
         public UniverseWithCursor(int width, int height) : base(width, height)
         {
-            cursorCordX = 0;
-            cursorCordY = 0;
+            cursorForField = new Cursor(width, height);
+
+            commandForCursorsMove = new ICursorCommand[countOfCommands];
+            commandForCursorsMove[0] = new MoveLeftCommand(cursorForField);
+            commandForCursorsMove[1] = new MoveRightCommand(cursorForField);
+            commandForCursorsMove[2] = new MoveDownCommand(cursorForField);
+            commandForCursorsMove[3] = new MoveUpCommand(cursorForField);
+            commandForCursorsMove[4] = new ChangeCellCommand(cursorForField, FieldOfUniverse);
+            commandForCursorsMove[5] = new StartUniverseLifeCommand(LifeOfUniverse);
         }
 
-        public int CursorCordX
+        public void MoveCursor(ConsoleKey inputedSymbol)
         {
-            get { return cursorCordX; }
-        }
-
-        public int CursorCordY
-        {
-            get { return cursorCordY; }
-        }
-
-        public void MoveCursorLeft()
-        {
-            if (cursorCordX - 1 >= 0)
+            for (int i = 0; i < countOfCommands ; i++)
             {
-                cursorCordX--;
+                 commandForCursorsMove[i].PerformCommand(inputedSymbol);
             }
         }
 
-        public void MoveCursorLower()
+        public Cursor GetCursor
         {
-            if (cursorCordY + 1 < Heigth)
+            get
             {
-                cursorCordY++;
-            }
-        }
-
-        public void MoveCursorRight()
-        {
-            if (cursorCordX + 1 < Width)
-            {
-                cursorCordX++;
-            }
-        }
-
-        public void MoveCursorUpper()
-        {
-            if (cursorCordY - 1 >= 0)
-            {
-                cursorCordY--;
+                return cursorForField;
             }
         }
     }

@@ -36,7 +36,7 @@ namespace LifeGame
                         }
                         else
                         {
-                            if (CursorCordX == i2 && CursorCordY == i)
+                            if (GetCursor.XPosition == i2 && GetCursor.YPosition == i)
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
                                 Console.Write(symbolOfCursor);

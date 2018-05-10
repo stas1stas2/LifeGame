@@ -10,7 +10,7 @@
         public Cursor(int maxXCursorPosition, int maxYCursorPosition)
         {
             maxXPosition = maxXCursorPosition;
-            maxXPosition = maxYCursorPosition;
+            maxYPosition = maxYCursorPosition;
 
             xPosition = 0;
             yPosition = 0;
@@ -30,6 +30,7 @@
                 }
             }
         }
+
         public int YPosition
         {
             get

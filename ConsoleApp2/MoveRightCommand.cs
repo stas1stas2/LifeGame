@@ -2,17 +2,20 @@
 
 namespace LifeGame
 {
-    class MoveRightCommand : IMoveCommand
+    internal class MoveRightCommand : ICursorCommand
     {
-        public MoveRightCommand(Cursor inputedCurosr) : base(inputedCurosr)
+        private Cursor pointerToCursor;
+
+        public MoveRightCommand(Cursor inputedCurosr)
         {
+            pointerToCursor = inputedCurosr;
         }
 
-        public override void Move(ConsoleKey commandCharacter)
+        public void PerformCommand(ConsoleKey commandCharacter)
         {
             if (commandCharacter == ConsoleKey.RightArrow)
             {
-                SetXCordinate(GetCursor.XPosition + 1);
+                pointerToCursor.XPosition = pointerToCursor.XPosition + 1;
             }
         }
     }
