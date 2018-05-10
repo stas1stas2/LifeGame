@@ -82,62 +82,62 @@
             return isFieldWereChanged;
         }
 
-        private int GetCountOfNeighbors(int Ycord, int Xcord)
+        private int GetCountOfNeighbors(int yCordinate, int xCordinate)
         {
             int countOfneighbors = 0;
 
-            if (Ycord > 0)
+            if (yCordinate > 0)
             {
-                if (FieldOfUniverse[Ycord - 1][Xcord].IsActive)
+                if (FieldOfUniverse[yCordinate - 1][xCordinate].IsActive)
                 {
                     countOfneighbors++;
                 }
-                if (Xcord > 0)
+                if (xCordinate > 0)
                 {
-                    if (FieldOfUniverse[Ycord - 1][Xcord - 1].IsActive)
+                    if (FieldOfUniverse[yCordinate - 1][xCordinate - 1].IsActive)
                     {
                         countOfneighbors++;
                     }
                 }
-                if (Xcord + 1 < Width)
+                if (xCordinate + 1 < Width)
                 {
-                    if (FieldOfUniverse[Ycord - 1][Xcord + 1].IsActive)
+                    if (FieldOfUniverse[yCordinate - 1][xCordinate + 1].IsActive)
                     {
                         countOfneighbors++;
                     }
                 }
             }
-            if (Ycord + 1 < Heigth)
+            if (yCordinate + 1 < Heigth)
             {
-                if (FieldOfUniverse[Ycord + 1][Xcord].IsActive)
+                if (FieldOfUniverse[yCordinate + 1][xCordinate].IsActive)
                 {
                     countOfneighbors++;
                 }
-                if (Xcord > 0)
+                if (xCordinate > 0)
                 {
-                    if (FieldOfUniverse[Ycord + 1][Xcord - 1].IsActive)
+                    if (FieldOfUniverse[yCordinate + 1][xCordinate - 1].IsActive)
                     {
                         countOfneighbors++;
                     }
                 }
-                if (Xcord + 1 < Width)
+                if (xCordinate + 1 < Width)
                 {
-                    if (FieldOfUniverse[Ycord + 1][Xcord + 1].IsActive)
+                    if (FieldOfUniverse[yCordinate + 1][xCordinate + 1].IsActive)
                     {
                         countOfneighbors++;
                     }
                 }
             }
-            if (Xcord > 0)
+            if (xCordinate > 0)
             {
-                if (FieldOfUniverse[Ycord][Xcord - 1].IsActive)
+                if (FieldOfUniverse[yCordinate][xCordinate - 1].IsActive)
                 {
                     countOfneighbors++;
                 }
             }
-            if (Xcord + 1 < Width)
+            if (xCordinate + 1 < Width)
             {
-                if (FieldOfUniverse[Ycord][Xcord + 1].IsActive)
+                if (FieldOfUniverse[yCordinate][xCordinate + 1].IsActive)
                 {
                    countOfneighbors++;
                 }
