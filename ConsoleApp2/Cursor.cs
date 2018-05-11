@@ -39,7 +39,7 @@
             }
             set
             {
-                if (value > 0 && maxYPosition > value)
+                if (value >= 0 && maxYPosition > value)
                 {
                     yPosition = value;
                 }
