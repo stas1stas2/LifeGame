@@ -24,7 +24,7 @@
             }
             set
             {
-                if (value > 0 && maxXPosition > value)
+                if (value >= 0 && maxXPosition > value)
                 {
                     xPosition = value;
                 }
