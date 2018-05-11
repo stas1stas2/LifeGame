@@ -4,9 +4,9 @@ namespace LifeGame
 {
     class StartUniverseLifeCommand : ICursorCommand
     {
-        private IsUniverseHaveToLive currentLifeOfUniverse;
+        private IsGameHaveToStart currentLifeOfUniverse;
 
-        public StartUniverseLifeCommand(IsUniverseHaveToLive LifeOfUniverse)
+        public StartUniverseLifeCommand(IsGameHaveToStart LifeOfUniverse)
         {
             currentLifeOfUniverse = LifeOfUniverse;
         }
@@ -15,7 +15,7 @@ namespace LifeGame
         {
             if (commandCharacter == ConsoleKey.Spacebar)
             {
-                currentLifeOfUniverse.boolean = true;
+                currentLifeOfUniverse.SetStateTrue();
             }
         }
     }

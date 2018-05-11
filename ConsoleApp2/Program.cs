@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static internal void Main()
+        internal static void Main()
         {
             LifeGameInterface gameObject = new LifeGameInterface(40, 10);
             gameObject.StartGame();

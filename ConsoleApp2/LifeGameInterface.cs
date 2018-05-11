@@ -5,7 +5,7 @@ namespace LifeGame
 {
     internal class LifeGameInterface : UniverseWithGameRules
     {
-        private int generations = 0;
+        private int countOfGenerations = 0;
         private int pauseTime = 300;
 
         public LifeGameInterface(int width, int height) : base(width, height)
@@ -16,30 +16,29 @@ namespace LifeGame
         {
             Console.Write("Generations: ");
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine($"{generations}");
+            Console.WriteLine($"{countOfGenerations}");
         }
 
         public void StartGame()
         {
-            bool IsGameContinue = true;
-            bool spaceWereTaped = false;
+            bool isGameContinue = true;
 
             PrintGeneration();
             PrintFieldWithCursor();
             
-            while (!spaceWereTaped)
+            while (!lifeOfUniverse.ReturnGameState)
             {
                 ConsoleKey pressedKey = Console.ReadKey().Key;
-                MoveCursor(pressedKey);
+                PerformCommand(pressedKey);
                 Console.Clear();
-                spaceWereTaped = LifeOfUniverse.boolean;
                 PrintGeneration();
                 PrintFieldWithCursor();
             }
-            while (IsGameContinue)
+
+            while (isGameContinue)
             {
-                generations++;
-                IsGameContinue = ChangeUniverseField();
+                countOfGenerations++;
+                isGameContinue = ChangeUniverseField();
                 Console.Clear();
                 PrintGeneration();
                 PrintFieldWithoutCursor();

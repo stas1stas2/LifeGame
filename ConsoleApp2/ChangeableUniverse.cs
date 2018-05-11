@@ -8,17 +8,17 @@ namespace LifeGame
         {
         }
 
-        public void ChangeCell(uint xCoord, uint yCoord)
+        public void ChangeCell(uint xCordinate, uint yCordinate)
         {
-            if (xCoord >= Width)
+            if (xCordinate >= Width)
             {
                 throw new ArgumentOutOfRangeException();
             }
-            if (yCoord >= Heigth)
+            if (yCordinate >= Heigth)
             {
                 throw new ArgumentOutOfRangeException();
             }
-            FieldOfUniverse[yCoord][xCoord].ChangeValue();
+            FieldOfUniverse[yCordinate][xCordinate].ChangeValue();
         }
     }
 }

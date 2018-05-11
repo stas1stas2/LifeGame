@@ -6,26 +6,28 @@ namespace LifeGame
         private const int countOfCommands = 6;
         private Cursor cursorForField;
         private ICursorCommand[] commandForCursorsMove;
-        protected IsUniverseHaveToLive LifeOfUniverse = new IsUniverseHaveToLive();
+        protected IsGameHaveToStart lifeOfUniverse = new IsGameHaveToStart();
 
         public UniverseWithCursor(int width, int height) : base(width, height)
         {
             cursorForField = new Cursor(width, height);
 
-            commandForCursorsMove = new ICursorCommand[countOfCommands];
-            commandForCursorsMove[0] = new MoveLeftCommand(cursorForField);
-            commandForCursorsMove[1] = new MoveRightCommand(cursorForField);
-            commandForCursorsMove[2] = new MoveDownCommand(cursorForField);
-            commandForCursorsMove[3] = new MoveUpCommand(cursorForField);
-            commandForCursorsMove[4] = new ChangeCellCommand(cursorForField, FieldOfUniverse);
-            commandForCursorsMove[5] = new StartUniverseLifeCommand(LifeOfUniverse);
+            commandForCursorsMove = new ICursorCommand[countOfCommands]
+            {
+            new MoveLeftCommand(cursorForField),
+            new MoveRightCommand(cursorForField),
+            new MoveDownCommand(cursorForField),
+            new MoveUpCommand(cursorForField),
+            new ChangeCellCommand(cursorForField, FieldOfUniverse),
+            new StartUniverseLifeCommand(lifeOfUniverse)
+            };
         }
 
-        public void MoveCursor(ConsoleKey inputedSymbol)
+        public void PerformCommand(ConsoleKey inputedSymbol)
         {
-            for (int i = 0; i < countOfCommands ; i++)
+            for (int i = 0; i < countOfCommands; i++)
             {
-                 commandForCursorsMove[i].PerformCommand(inputedSymbol);
+                commandForCursorsMove[i].PerformCommand(inputedSymbol);
             }
         }
 

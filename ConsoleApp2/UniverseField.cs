@@ -40,18 +40,18 @@
 
         public bool IsFieldEqual(UniverseCell[][] fieldForCompare)
         {
-            bool isEuqal = true;
+            bool isEqual = true;
             if (fieldForCompare.Length != height)
             {
-                isEuqal = false;
+                isEqual = false;
             }
             else
             {
-                for (int i = 0; i < height && isEuqal; i++)
+                for (int i = 0; i < height && isEqual; i++)
                 { 
                     if (fieldForCompare[i].Length != universeField[i].Length)
                     {
-                        isEuqal = false;
+                        isEqual = false;
                     }
                     else
                     {
@@ -59,30 +59,30 @@
                         {
                             if (universeField[i][j].IsActive != fieldForCompare[i][j].IsActive)
                             {
-                                isEuqal = false;
+                                isEqual = false;
                                 break;
                             }
                         }
                     }
                 }
             }
-            return isEuqal;
+            return isEqual;
         }
 
         public UniverseCell[][] GetFieldClone()
         {
-            UniverseCell[][] returnValue;
-            returnValue = new UniverseCell[height][];
+            UniverseCell[][] fieldsClone;
+            fieldsClone = new UniverseCell[height][];
             for (int i = 0; i < height; i++)
             {
-                returnValue[i] = new UniverseCell[width];
+                fieldsClone[i] = new UniverseCell[width];
                 for (int i2 = 0; i2 < width; i2++)
                 {
-                    returnValue[i][i2] = new UniverseCell();
-                    returnValue[i][i2].IsActive = universeField[i][i2].IsActive;
+                    fieldsClone[i][i2] = new UniverseCell();
+                    fieldsClone[i][i2].IsActive = universeField[i][i2].IsActive;
                 }
             }
-            return returnValue;
+            return fieldsClone;
         }
     }
 }
