@@ -22,12 +22,6 @@
             }
         }
 
-        protected UniverseCell[][] FieldOfUniverse
-        {
-            get { return universeField; }
-            set { universeField = value; }
-        }
-        
         public int Heigth
         {
             get { return height; }
@@ -36,6 +30,12 @@
         public int Width
         {
             get { return width; }
+        }
+
+        protected UniverseCell[][] FieldOfUniverse
+        {
+            get { return universeField; }
+            set { universeField = value; }
         }
 
         public bool IsFieldEqual(UniverseCell[][] fieldForCompare)

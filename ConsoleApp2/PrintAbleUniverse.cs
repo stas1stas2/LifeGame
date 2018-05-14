@@ -6,8 +6,8 @@ namespace LifeGame
     {
         private char symbolOfBounds = '+';
         private char symbolOfCellWithLife = 'O';
-        private char symbolOfCursor = 'X';
         private char symbolOfCellWithoutLife = ' ';
+        private char symbolOfCursor = 'X';
 
         public PrintAbleUniverse(int width, int height) : base(width, height)
         {

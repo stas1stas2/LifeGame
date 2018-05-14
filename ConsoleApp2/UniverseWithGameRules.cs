@@ -23,17 +23,6 @@
         {
             get { return isFieldWereChanged; }
         }
-        
-        public void ClearField()
-        {
-            for (int i = 0; i < Heigth; i++)
-            {
-                for (int i2 = 0; i2 < Width; i2++)
-                {
-                    newField[i][i2].IsActive = false;
-                }
-            }
-        }
 
         public bool ChangeUniverseField()
         {
@@ -80,6 +69,17 @@
                 }
             }
             return isFieldWereChanged;
+        }
+        
+        public void ClearField()
+        {
+            for (int i = 0; i < Heigth; i++)
+            {
+                for (int i2 = 0; i2 < Width; i2++)
+                {
+                    newField[i][i2].IsActive = false;
+                }
+            }
         }
 
         private int GetCountOfNeighbors(int yCordinate, int xCordinate)

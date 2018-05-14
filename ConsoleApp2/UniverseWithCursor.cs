@@ -4,8 +4,8 @@ namespace LifeGame
     internal class UniverseWithCursor : ChangeableUniverse
     {
         private const int countOfCommands = 6;
-        private Cursor cursorForField;
         private ICursorCommand[] commandForCursorsMove;
+        private Cursor cursorForField;
         protected IsGameHaveToStart lifeOfUniverse = new IsGameHaveToStart();
 
         public UniverseWithCursor(int width, int height) : base(width, height)
@@ -23,19 +23,19 @@ namespace LifeGame
             };
         }
 
-        public void PerformCommand(ConsoleKey inputedSymbol)
-        {
-            for (int i = 0; i < countOfCommands; i++)
-            {
-                commandForCursorsMove[i].PerformCommand(inputedSymbol);
-            }
-        }
-
         public Cursor GetCursor
         {
             get
             {
                 return cursorForField;
+            }
+        }
+
+        public void PerformCommand(ConsoleKey inputedSymbol)
+        {
+            for (int i = 0; i < countOfCommands; i++)
+            {
+                commandForCursorsMove[i].PerformCommand(inputedSymbol);
             }
         }
     }

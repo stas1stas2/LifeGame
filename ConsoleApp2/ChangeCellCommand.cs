@@ -4,8 +4,8 @@ namespace LifeGame
 {
     internal class ChangeCellCommand : ICursorCommand
     {
-        private Cursor pointerToCursor;
         private UniverseCell[][] currentField;
+        private Cursor pointerToCursor;
 
         public ChangeCellCommand(Cursor inputedCurosr, UniverseCell[][] inputedField) 
         {
