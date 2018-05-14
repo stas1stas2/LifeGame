@@ -2,7 +2,7 @@
 
 namespace LifeGame
 {
-    class StartUniverseLifeCommand : ICursorCommand
+    internal class StartUniverseLifeCommand : ICursorCommand
     {
         private IsGameHaveToStart currentLifeOfUniverse;
 

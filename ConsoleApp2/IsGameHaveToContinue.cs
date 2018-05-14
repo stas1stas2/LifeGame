@@ -1,6 +1,6 @@
 ﻿namespace LifeGame
 {
-    class IsGameHaveToStart
+    internal class IsGameHaveToStart
     {
         private bool boolean = false;
 
