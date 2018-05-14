@@ -24,7 +24,7 @@ namespace LifeGame
             };
         }
 
-        public Cursor GetCursor
+        public Cursor CursorInfo
         {
             get { return cursorForField; }
         }
