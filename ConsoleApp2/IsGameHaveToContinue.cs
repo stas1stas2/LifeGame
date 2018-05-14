@@ -8,7 +8,8 @@
         {
         }
 
-        public bool ReturnGameState {
+        public bool ReturnGameState
+        {
             get { return boolean; }
         }
 

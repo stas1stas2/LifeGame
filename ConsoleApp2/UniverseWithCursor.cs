@@ -26,10 +26,7 @@ namespace LifeGame
 
         public Cursor GetCursor
         {
-            get
-            {
-                return cursorForField;
-            }
+            get { return cursorForField; }
         }
 
         public void PerformCommand(ConsoleKey inputedSymbol)

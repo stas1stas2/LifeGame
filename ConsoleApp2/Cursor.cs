@@ -1,4 +1,6 @@
-﻿namespace LifeGame
+﻿using System;
+
+namespace LifeGame
 {
     internal class Cursor
     {
@@ -18,31 +20,30 @@
 
         public int XPosition
         {
-            get
-            {
-                return xPosition;
-            }
+            get { return xPosition; }
             set
             {
-                if (value >= 0 && maxXPosition > value)
+                if (value < 0 || maxXPosition <= value)
                 {
-                    xPosition = value;
+                    throw new ArgumentOutOfRangeException();
                 }
+
+                xPosition = value;
             }
         }
 
         public int YPosition
         {
-            get
-            {
-                return yPosition;
-            }
+            get { return yPosition; }
+
             set
             {
-                if (value >= 0 && maxYPosition > value)
+                if (value < 0 || maxYPosition <= value)
                 {
-                    yPosition = value;
+                    throw new ArgumentOutOfRangeException();
                 }
+
+                yPosition = value;
             }
         }
     }
