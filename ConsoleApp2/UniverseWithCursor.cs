@@ -34,7 +34,7 @@ namespace LifeGame
 
         public void PerformCommand(ConsoleKey inputedSymbol)
         {
-            for (int i = 0; i < countOfCommands; i++)
+            for(int i = 0; i < countOfCommands; i++)
             {
                 commandForCursorsMove[i].PerformCommand(inputedSymbol);
             }
