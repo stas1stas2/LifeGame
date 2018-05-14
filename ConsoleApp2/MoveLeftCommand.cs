@@ -15,7 +15,7 @@ namespace LifeGame
         {
             if (commandCharacter == ConsoleKey.LeftArrow)
             {
-                pointerToCursor.XPosition = pointerToCursor.XPosition-1;
+                pointerToCursor.XPosition = pointerToCursor.XPosition - 1;
             }
         }
     }
