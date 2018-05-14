@@ -2,7 +2,7 @@
 {
     internal class IsGameHaveToStart
     {
-        private bool boolean = false;
+        private bool gameState = false;
 
         public IsGameHaveToStart()
         {
@@ -10,12 +10,12 @@
 
         public bool ReturnGameState
         {
-            get { return boolean; }
+            get { return gameState; }
         }
 
         public void SetStateTrue()
         {
-            boolean = true;
+            gameState = true;
         }
     }
 }
