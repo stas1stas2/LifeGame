@@ -26,7 +26,7 @@ namespace LifeGame
             PrintGeneration();
             PrintFieldWithCursor();
             
-            while (!LifeOfUniverse.ReturnGameState)
+            while (!LifeOfUniverse.IsGameHasToRun)
             {
                 ConsoleKey pressedKey = Console.ReadKey().Key;
                 PerformCommand(pressedKey);

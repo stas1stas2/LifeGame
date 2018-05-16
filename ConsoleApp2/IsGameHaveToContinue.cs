@@ -2,16 +2,16 @@
 {
     internal class IsGameHaveToStart
     {
-        private bool gameState = false;
+        private bool isGameHasToRun = false;
 
-        public bool ReturnGameState
+        public bool IsGameHasToRun
         {
-            get { return gameState; }
+            get { return isGameHasToRun; }
         }
 
         public void SetStateTrue()
         {
-            gameState = true;
+            isGameHasToRun = true;
         }
     }
 }
