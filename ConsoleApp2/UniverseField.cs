@@ -38,6 +38,22 @@
             get { return width; }
         }
 
+        public UniverseCell[][] GetFieldClone()
+        {
+            UniverseCell[][] fieldsClone;
+            fieldsClone = new UniverseCell[height][];
+            for (int i = 0; i < height; i++)
+            {
+                fieldsClone[i] = new UniverseCell[width];
+                for (int i2 = 0; i2 < width; i2++)
+                {
+                    fieldsClone[i][i2] = new UniverseCell();
+                    fieldsClone[i][i2].IsActive = universeField[i][i2].IsActive;
+                }
+            }
+            return fieldsClone;
+        }
+
         public bool IsFieldEqual(UniverseCell[][] fieldForCompare)
         {
             bool isEqual = true;
@@ -67,22 +83,6 @@
                 }
             }
             return isEqual;
-        }
-
-        public UniverseCell[][] GetFieldClone()
-        {
-            UniverseCell[][] fieldsClone;
-            fieldsClone = new UniverseCell[height][];
-            for (int i = 0; i < height; i++)
-            {
-                fieldsClone[i] = new UniverseCell[width];
-                for (int i2 = 0; i2 < width; i2++)
-                {
-                    fieldsClone[i][i2] = new UniverseCell();
-                    fieldsClone[i][i2].IsActive = universeField[i][i2].IsActive;
-                }
-            }
-            return fieldsClone;
         }
     }
 }
