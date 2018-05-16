@@ -4,10 +4,6 @@
     {
         private bool gameState = false;
 
-        public IsGameHaveToStart()
-        {
-        }
-
         public bool ReturnGameState
         {
             get { return gameState; }
