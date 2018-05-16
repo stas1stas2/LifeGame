@@ -15,12 +15,12 @@ namespace LifeGame
 
             commandForCursorsMove = new ICursorCommand[countOfCommands]
             {
-            new MoveLeftCommand(cursorForField),
-            new MoveRightCommand(cursorForField),
-            new MoveDownCommand(cursorForField),
-            new MoveUpCommand(cursorForField),
-            new ChangeCellCommand(cursorForField, FieldOfUniverse),
-            new StartUniverseLifeCommand(LifeOfUniverse)
+                new MoveLeftCommand(cursorForField),
+                new MoveRightCommand(cursorForField),
+                new MoveDownCommand(cursorForField),
+                new MoveUpCommand(cursorForField),
+                new ChangeCellCommand(cursorForField, FieldOfUniverse),
+                new StartUniverseLifeCommand(LifeOfUniverse)
             };
         }
 
@@ -36,7 +36,7 @@ namespace LifeGame
 
         public void PerformCommand(ConsoleKey inputedSymbol)
         {
-            for(int i = 0; i < countOfCommands; i++)
+            for (int i = 0; i < countOfCommands; i++)
             {
                 commandForCursorsMove[i].PerformCommand(inputedSymbol);
             }
