@@ -2,7 +2,7 @@
 
 namespace LifeGame
 {
-    interface ICursorCommand
+    internal interface ICursorCommand
     {
         void PerformCommand(ConsoleKey commandCharacter);
     }
