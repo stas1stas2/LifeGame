@@ -7,7 +7,7 @@ namespace LifeGame
         private const int countOfCommands = 6;
         private ICursorCommand[] commandForCursorsMove;
         private Cursor cursorForField;
-        protected IsGameHaveToStart lifeOfUniverse = new IsGameHaveToStart();
+        private IsGameHaveToStart lifeOfUniverse = new IsGameHaveToStart();
 
         public UniverseWithCursor(int width, int height) : base(width, height)
         {
@@ -20,13 +20,18 @@ namespace LifeGame
             new MoveDownCommand(cursorForField),
             new MoveUpCommand(cursorForField),
             new ChangeCellCommand(cursorForField, FieldOfUniverse),
-            new StartUniverseLifeCommand(lifeOfUniverse)
+            new StartUniverseLifeCommand(LifeOfUniverse)
             };
         }
 
         public Cursor CursorInfo
         {
             get { return cursorForField; }
+        }
+
+        protected IsGameHaveToStart LifeOfUniverse
+        {
+            get { return lifeOfUniverse; }
         }
 
         public void PerformCommand(ConsoleKey inputedSymbol)
