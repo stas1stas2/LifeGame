@@ -35,7 +35,6 @@ namespace LifeGame
         public int YPosition
         {
             get { return yPosition; }
-
             set
             {
                 if (value < 0 || maxYPosition <= value)
